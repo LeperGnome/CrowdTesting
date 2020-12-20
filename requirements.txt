@@ -8,3 +8,7 @@ MarkupSafe==1.1.1
 marshmallow==3.10.0
 python-dotenv==0.15.0
 Werkzeug==1.0.1
+Flask-Jwt-Extended==3.25.0
+peewee-validates==1.0.7
+peewee==3.14.0
+peewee-migrations==0.3.19

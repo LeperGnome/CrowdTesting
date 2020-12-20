@@ -1,3 +1,4 @@
+from app import AppContext
 from environs import Env
 import functools
 from loguru import logger
@@ -14,8 +15,8 @@ logger.add(
     colorize=True,
 )
 
-env = Env()
-env.read_env('.env')
+app = AppContext.get_instance()
+env = app.env
 
 
 class ServerError(Exception):
@@ -25,7 +26,7 @@ class ServerError(Exception):
         super().__init__()
 
 
-def error_hadler(func):
+def error_handler(func):
     @functools.wraps(func)
     def inner(*args, **kwargs):
         try:
